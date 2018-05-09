@@ -33,12 +33,13 @@ session_start();
 
 
 </style>
-	<title>Work Website</title>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="./login.css" />
 </head>
 
 <body>
 <p><h3> login.php </h3></p>
-<div id="wrapper"><p><h1> Welcome to the Work Website </b></h1></p>
+<div id="wrapper"><p><h1> to the Login Page </b></h1></p>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 

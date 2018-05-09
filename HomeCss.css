@@ -1,0 +1,117 @@
+
+a {
+    background-color: #27557D; /* Green */
+    border: none;
+    color: #F5F5F5;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+div {
+	padding: 10px;
+	text-align: center;
+	
+
+}
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #F5F5F5;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.section {
+	border: 10px solid #27557D;
+	margin: 20px;
+}
+
+.imgleft{
+	float: left;
+}
+
+.imgright{
+	float: right;
+}
+
+
+#header {
+	background-color: #C72636;
+}
+
+#wrapper {
+	width: 1200px;
+	margin: auto;
+	border: 10px solid #27557D;
+	border-radius: 10px;
+	background-color: #F5F5F5;
+	padding: 20px;
+}
+
+body {
+	background-color:  #3E88BD;
+}
+#sidebar {
+	
+	width: 258px;
+	text-align: center;
+	border: 2px solid black;
+	margin: 10px;
+	background-color: #EA4335;
+}
+
+
+
+iframe: {
+	align: center;
+}
+
+
+img {
+    width:450px;
+    height: auto;
+}
+
+#navigation {
+	background-color:  #C72636;
+	border: 10px solid #27557D;
+	
+	
+}
+
+h1 {
+	font-family: Impact, Charcoal, sans-serif;
+	text-align: center;
+	
+}
+h1:before {
+	content: "Welcome,  ";
+	
+}
+h1:after {
+	content: "!";
+	
+}
+
+h2 {
+	font-family: Impact, Charcoal, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+p {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+
+.hi {
+	padding: 5px;
+}

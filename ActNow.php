@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+?>
 <html>
 <head>
 	<title>Political Page - Act Now</title>
@@ -15,7 +18,20 @@
 			<a href="./Calendar.php">Calendar</a>
 			
 			<a href="./Volunteer.php">Volunteer Page</a>
-		
+		<?php
+
+			if( $_SESSION["login"]== 'true'){
+				
+				echo "<a href='/login.php'> Logout </a>";
+			}else{
+				echo "<a href='/login.php'> Login </a>";
+			}
+		?>
+		<?php 
+		if($_SESSION['name']){
+			echo '<h1>' . $_SESSION['name'] .  '</h1>' ;
+		}
+		?>
 		</div>
 		
 		<div id="main">
