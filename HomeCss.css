@@ -14,7 +14,8 @@ a {
 div {
 	padding: 10px;
 	text-align: center;
-	
+  height: auto;
+
 
 }
 .button {
@@ -27,11 +28,13 @@ div {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  height: auto;
 }
 
 .section {
 	border: 10px solid #27557D;
 	margin: 20px;
+  height: auto;
 }
 
 .imgleft{
@@ -45,60 +48,65 @@ div {
 
 #header {
 	background-color: #C72636;
+  height: auto;
 }
 
 #wrapper {
-	width: 1200px;
+	/* width: 1200px; */
 	margin: auto;
 	border: 10px solid #27557D;
 	border-radius: 10px;
 	background-color: #F5F5F5;
 	padding: 20px;
+  height: auto;
 }
 
 body {
 	background-color:  #3E88BD;
 }
 #sidebar {
-	
-	width: 258px;
+
+	/* width: 258px; */
 	text-align: center;
 	border: 2px solid black;
 	margin: 10px;
 	background-color: #EA4335;
+  height: auto;
 }
 
 
 
 iframe: {
 	align: center;
+
 }
 
 
 img {
-    width:450px;
+    max-width: 50%;
     height: auto;
 }
 
 #navigation {
 	background-color:  #C72636;
 	border: 10px solid #27557D;
-	
-	
+  height: auto;
+
+
 }
 
 h1 {
 	font-family: Impact, Charcoal, sans-serif;
 	text-align: center;
-	
+
 }
 h1:before {
 	content: "Welcome,  ";
-	
+
 }
 h1:after {
 	content: "!";
-	
+
 }
 
 h2 {
@@ -114,4 +122,12 @@ p {
 
 .hi {
 	padding: 5px;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 750%;
 }

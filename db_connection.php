@@ -17,7 +17,7 @@ Class Connection {
 			echo "Database error:" . $e->getMessage();
 		}
 	}
-	
+
 	public function closeConnection(){
 		$this->con = null;
 	}
@@ -25,13 +25,3 @@ Class Connection {
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-

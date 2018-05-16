@@ -1,6 +1,17 @@
 <?php
 include_once 'db_connection.php';
 session_start();
+if(isset($_GET['action'])){
+	if($_GET['action'] == 'logout'){
+		unset($_SESSION['login']);
+		unset($_SESSION['name']);
+		session_destroy();
+		$conn = new Connection();
+		$conn->closeConnection();
+		header('location: home.php');
+}
+
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,22 +23,22 @@ session_start();
 }
 
 .section{
-	
-	
+
+
 	margin:auto;
-	
+
 	padding:10px;
 }
 .greenText{
-	
-	
+
+
 	text-align:center;
 	color:green;
 }
 .redText{
-	
+
 	text-align:center;
-	
+
 	color:red;
 }
 
@@ -38,14 +49,14 @@ session_start();
 </head>
 
 <body>
-<p><h3> login.php </h3></p>
+
 <div id="wrapper"><p><h1> to the Login Page </b></h1></p>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
 	<div class="section">Username: <input type="text" name="username" value="<?= isset($_POST['username']) ? $_POST['username'] : ''; ?>"><br></div>
 	<div class="section">Password: <input type="password" name="password"><br></div>
-	
+
 	<div class="section"><input type="submit" name="login" value="login"/></div>
 	<div class="section"><input type="submit" name="register" value="register"/></div>
 </form>
@@ -55,19 +66,19 @@ session_start();
 	if(isset($_POST["username"]) and isset($_POST["password"])){
 		$obj = new Connection();
 		$con=$obj->openConnection();
-		
+
 		if($_POST["username"] and $_POST["password"]){
 			$inputName=htmlspecialchars($_POST["username"]);
 			$inputPw=htmlspecialchars($_POST['password']);
-			
+
 			$storedPw;
-			$existedName=0; 
-		
+			$existedName=0;
+
 			$stmt =$con->prepare("SELECT * FROM users");
 			$stmt->execute();
 			$result=$stmt->fetchAll();
-			
-			
+
+
 			foreach($result as $row){
 				if ($inputName == $row["username"]){
 					$existedName=1;
@@ -75,24 +86,24 @@ session_start();
 				}
 			}
 			if(isset($_POST["login"])){
-				
+
 				if($existedName==1 && password_verify($inputPw, $storePw)){
 					$_SESSION["logout"]=false;
 										$_SESSION["login"]=true;
 
 					$_SESSION["name"]=$inputName;
 					$_SESSION["clicks"]=0;
-					
+
 					header('Location:home.php');
-					
+
 				}else if($existedName==0){
 					echo '<div class="redText">No user '.$inputName.' exists.</div>' ;
 				}else if($existedName==1 && $inputPw != $storePw){
 					echo '<div class="redText">Incorrect Password.</div>';
 				}
 			}
-			
-			
+
+
 			if(isset($_POST["register"])){
 				if(strlen($inputName)<4 || strlen($inputName)>31){
 					echo '<div class="redText">Invalid username:Must be between 4 and 31 characters long.</div>';
@@ -111,9 +122,9 @@ session_start();
 					$stmt->bindParam(':pass',$saltedPw);
 					$stmt->execute();
 					echo '<div class="greenText">Account '.$inputName.' created!</div>';
-				}	
+				}
 			}
-				
+
 		}else if(!$_POST["username"]){
 			echo '<div class="redText">Please input username!</div>';
 		}else if(!$_POST["password"]){
@@ -126,6 +137,7 @@ session_start();
 			session_destroy();
 		}
 	}
+
 ?>
 
 
